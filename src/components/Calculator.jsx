@@ -53,7 +53,7 @@ const Calculator = () => {
 
     useEffect(() => {
         calculatePerPerson();
-    }, [state.bill, state.selectedTip, state.customTip, state.people]);
+    }, [state.bill, state.selectedTip, state.customTip, state.people,calculatePerPerson]);
 
     return (
         <div className='container'>
@@ -76,7 +76,7 @@ const Calculator = () => {
                     <div>
                         <div>
                             {[5, 10, 15, 25, 50].map((percentage, i) => (
-                                <button className={state?.selectedTip != percentage ? `button_${i}` : 'selectedButton'} key={percentage} onClick={() => handleTipSelection(percentage)}>{percentage} %</button>
+                                <button className={state?.selectedTip !== percentage ? `button_${i}` : 'selectedButton'} key={percentage} onClick={() => handleTipSelection(percentage)}>{percentage} %</button>
                             ))}
                             {state.selectedTip === 'Custom' ?
 

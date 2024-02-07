@@ -1,0 +1,137 @@
+.container {
+  background-color: #C5E4E7;
+  width: 1366px;
+  height: 620px;
+}
+
+.calculator {
+  width: 800px;
+  height: 420px;
+  top: 320px;
+  left: 135px;
+  background-color: #fff;
+  margin: 132px 90px 0px 90px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-side{
+  background: #00474B;
+    width: 50%;
+    margin: 47px 45px 34px 25px;
+    border-radius: 10px;
+    padding: 40px 0px 27px 35px;
+}
+
+.left-side{
+  width: 50%;
+  margin-left: 25px;
+  margin-top: 55px;
+}
+
+.total-tip {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container label {
+  margin-bottom: 5px; /* Adjust spacing between label and input */
+}
+
+.input-container input[type='text'] {
+  border: 1px solid rgb(0, 255, 157); /* Blue border */
+  border-radius: 5px; /* Border radius */
+  padding: 5px; /* Adjust padding */
+  outline: none; /* Remove default outline */
+}
+
+.input-container input[type='text']:focus {
+  border-color: darkblue; /* Change border color on focus */
+}
+
+.select_tip_label{
+  padding: 15px 0px 15px 0px;
+}
+.button_0{
+  width: 90.88px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #00474B;
+  color: white;
+  border: none;
+}
+.button_1{
+  width: 90.88px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #00474B;
+  color: white;
+  border: none;
+}
+.button_2{
+  width: 90.88px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #00474B;
+  color: white;
+  border: none;
+}
+.button_3{
+  width: 90.88px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #00474B;
+  color: white;
+  border: none;
+}
+.button_4{
+  width: 90.88px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #00474B;
+  color: white;
+  border: none;
+}
+.selectedButton{
+  width: 90.88px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #9FE8DD;
+  color: white;
+  border: none;
+}
+.customInput{
+  width: 84px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #26C2AD;
+}
+.customButton{
+  width: 70.88px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: none;
+
+}

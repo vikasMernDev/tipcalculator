@@ -135,3 +135,12 @@
   border: none;
 
 }
+
+.reset button{
+  width: 90%;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    background: #9FE8DF;
+    margin-top: 125px;
+}

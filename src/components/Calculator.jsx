@@ -27,33 +27,34 @@ const Calculator = () => {
     };
 
     // Function to calculate tip and total amount per person
-    const calculatePerPerson = () => {
-        const billAmount = parseFloat(state.bill);
-        let tipPercentage;
-        if (state.selectedTip === 'Custom') {
-            tipPercentage = parseFloat(state.customTip) / 100;
-        } else {
-            tipPercentage = parseFloat(state.selectedTip) / 100;
-        }
-        const numberOfPeople = parseFloat(state.people);
-
-        // Check if any input value is invalid or empty
-        if (isNaN(billAmount) || isNaN(tipPercentage) || isNaN(numberOfPeople) || numberOfPeople <= 0) {
-            setTipAmount(0);
-            setTotalAmount(0);
-            return;
-        }
-
-        const tipAmount = billAmount * tipPercentage / numberOfPeople;
-        const totalAmountPerPerson = (billAmount + tipAmount) / numberOfPeople;
-
-        setTipAmount(tipAmount);
-        setTotalAmount(totalAmountPerPerson);
-    };
+    
 
     useEffect(() => {
+        const calculatePerPerson = () => {
+            const billAmount = parseFloat(state.bill);
+            let tipPercentage;
+            if (state.selectedTip === 'Custom') {
+                tipPercentage = parseFloat(state.customTip) / 100;
+            } else {
+                tipPercentage = parseFloat(state.selectedTip) / 100;
+            }
+            const numberOfPeople = parseFloat(state.people);
+    
+            // Check if any input value is invalid or empty
+            if (isNaN(billAmount) || isNaN(tipPercentage) || isNaN(numberOfPeople) || numberOfPeople <= 0) {
+                setTipAmount(0);
+                setTotalAmount(0);
+                return;
+            }
+    
+            const tipAmount = billAmount * tipPercentage / numberOfPeople;
+            const totalAmountPerPerson = (billAmount + tipAmount) / numberOfPeople;
+    
+            setTipAmount(tipAmount);
+            setTotalAmount(totalAmountPerPerson);
+        };
         calculatePerPerson();
-    }, [state.bill, state.selectedTip, state.customTip, state.people,calculatePerPerson]);
+    }, [state.bill, state.selectedTip, state.customTip, state.people]);
 
     return (
         <div className='container'>
@@ -64,11 +65,24 @@ const Calculator = () => {
                 <div className='left-side'>
                     <div className='input-container'>
                         <label htmlFor='bill'>Bill</label>
-                        <input type='text' style={{
-                            backgroundColor: '#F3F8FB', height:
-                                "20px"
-                        }} id='bill' name='bill' value={state.bill} onChange={handleChange} />
+                        <span style={{ position: 'relative' }}>
+                            <span style={{ position: 'absolute', left: '5px', top: '50%', transform: 'translateY(-50%)' }}>$</span>
+                            <input
+                                type='text'
+                                style={{
+                                    paddingLeft: '20px', /* Adjust this value based on the width of the $ symbol */
+                                    backgroundColor: '#F3F8FB',
+                                    height: '20px',
+                                    width:'90%'
+                                }}
+                                id='bill'
+                                name='bill'
+                                value={state.bill}
+                                onChange={handleChange}
+                            />
+                        </span>
                     </div>
+
                     <div className='select_tip_label'>
                         <label>Select Tip %</label>
                     </div>
@@ -121,16 +135,9 @@ const Calculator = () => {
                             <p>${totalAmount || '0.00'}</p>
                         </div>
                     </div>
-                    {
-                        tipAmount ?
-                            <div>
-                                <button type='submit' onClick={() => setState({ bill: '', people: '', selectedTip: '' })}>Reset</button>
-                            </div>
-                            :
-                            <div>
-                                <button type='submit' onClick={calculatePerPerson}>Calculate</button>
-                            </div>
-                    }
+                    <div className='reset'>
+                        <button type='submit' onClick={() => setState({ bill: '', people: '', selectedTip: '' })}>Reset</button>
+                    </div>
                 </div>
             </div>
         </div>

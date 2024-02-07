@@ -127,13 +127,14 @@
   border: 1px solid #26C2AD;
 }
 .customButton{
-  width: 70.88px;
+  width: 92px;
   height: 30px;
   margin-right: 20px;
   border-radius: 5px;
   margin-bottom: 15px;
   border: none;
-
+  color: #00474B;
+  font-weight: 600;
 }
 
 .reset button{

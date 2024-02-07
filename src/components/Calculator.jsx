@@ -27,7 +27,7 @@ const Calculator = () => {
     };
 
     // Function to calculate tip and total amount per person
-    
+
 
     useEffect(() => {
         const calculatePerPerson = () => {
@@ -39,17 +39,17 @@ const Calculator = () => {
                 tipPercentage = parseFloat(state.selectedTip) / 100;
             }
             const numberOfPeople = parseFloat(state.people);
-    
+
             // Check if any input value is invalid or empty
             if (isNaN(billAmount) || isNaN(tipPercentage) || isNaN(numberOfPeople) || numberOfPeople <= 0) {
                 setTipAmount(0);
                 setTotalAmount(0);
                 return;
             }
-    
+
             const tipAmount = billAmount * tipPercentage / numberOfPeople;
             const totalAmountPerPerson = (billAmount + tipAmount) / numberOfPeople;
-    
+
             setTipAmount(tipAmount);
             setTotalAmount(totalAmountPerPerson);
         };
@@ -73,7 +73,7 @@ const Calculator = () => {
                                     paddingLeft: '20px', /* Adjust this value based on the width of the $ symbol */
                                     backgroundColor: '#F3F8FB',
                                     height: '20px',
-                                    width:'90%'
+                                    width: '90%'
                                 }}
                                 id='bill'
                                 name='bill'
@@ -113,23 +113,33 @@ const Calculator = () => {
                                     <path d="M12 12c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0-8c2.21 0 4 1.79 4 4 0 2.45-1.81 4.47-4 4.9-2.19-.43-4-2.45-4-4.9 0-2.21 1.79-4 4-4zM12 14c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm0 4c-2.67 0-5.33 1.33-5.33 2s2.66 2 5.33 2 5.33-1.33 5.33-2-2.66-2-5.33-2z" />
                                 </svg>
                             </span>
-                            <input type='text' name='people' value={state.people} onChange={handleChange} style={{ paddingLeft: "30px", backgroundColor: '#F3F8FB', width: '90%' }} />
+                            <input type='text' name='people' value={state.people} onChange={handleChange} style={{ paddingLeft: "30px", backgroundColor: '#F3F8FB', width: '90%', height: '20px' }} />
                         </div>
                     </div>
 
                 </div>
                 <div className='right-side'>
                     <div className='total-tip'>
-                        <div>
-                            <label style={{ color: '#FFFFFF' }}>Tip Amount</label>
+                        <div >
+                            <div>
+                                <label style={{ color: '#FFFFFF' }}>Tip Amount</label>
+                            </div>
+                            <div>
+                                <label style={{ color: '#649BA0',fontWeight:'600',fontSize:'12px' }}>/Person</label>
+                            </div>
                         </div>
                         <div style={{ marginRight: '45px', color: '#21C3AC' }}>
                             <p>${tipAmount || '0.00'}</p>
                         </div>
                     </div>
                     <div className='total-tip'>
-                        <div>
-                            <label style={{ color: '#FFFFFF' }}>Total Amount</label>
+                    <div >
+                            <div>
+                                <label style={{ color: '#FFFFFF' }}>Total Amount</label>
+                            </div>
+                            <div>
+                                <label style={{ color: '#649BA0',fontWeight:'600',fontSize:'12px' }}>/Person</label>
+                            </div>
                         </div>
                         <div style={{ marginRight: '45px', color: '#21C3AC' }}>
                             <p>${totalAmount || '0.00'}</p>

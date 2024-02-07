@@ -66,7 +66,7 @@ const Calculator = () => {
                 <div className='calculator'>
                     <div className='left-side'>
                         <div className='input-container'>
-                            <label htmlFor='bill'>Bill</label>
+                            <label htmlFor='bill' style={{color:'#6B7777'}}>Bill</label>
                             <span style={{ position: 'relative' }}>
                                 <span style={{ position: 'absolute', left: '5px', top: '50%', transform: 'translateY(-50%)' }}>$</span>
                                 <input
@@ -103,7 +103,7 @@ const Calculator = () => {
                         <br />
                         <div className='input-container'>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <label>Number of people</label>
+                                <label style={{color:'#6B7777'}}>Number of people</label>
                                 {state.error && <div style={{ color: 'red' }}>{state.error}</div>}
                             </div>
                             <div style={{ position: "relative",display:'flex',justifyContent:'space-between' }}>

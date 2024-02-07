@@ -1,6 +1,6 @@
 .container {
   background-color: #C5E4E7;
-  width: 1366px;
+  width: 1349px;
   height: 620px;
 }
 
@@ -10,7 +10,7 @@
   top: 320px;
   left: 135px;
   background-color: #fff;
-  margin: 132px 90px 0px 90px;
+  margin: 120px 90px 0px 260px;
   display: flex;
   justify-content: space-between;
 }

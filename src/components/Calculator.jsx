@@ -59,7 +59,7 @@ const Calculator = () => {
 
     return (
         <div className='container'>
-            <div>
+            <div className='555555555555555'>
                 <div>
                     <h3 style={{ textAlign: 'center', marginTop: '0px' }}>SPLITTER</h3>
                 </div>

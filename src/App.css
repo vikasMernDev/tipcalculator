@@ -41,7 +41,7 @@
 }
 
 .input-container label {
-  margin-bottom: 5px; /* Adjust spacing between label and input */
+  margin-bottom: 10px; 
 }
 
 .input-container input[type='text'] {
@@ -57,6 +57,8 @@
 
 .select_tip_label{
   padding: 15px 0px 15px 0px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 .button_0{
   width: 90.88px;
